@@ -11,13 +11,26 @@ let clienteLilit = [
     {produto: 'Tênis casual preto', valor: 120.0}, 
     {produto: 'meia calça transparente', valor: 30.0}]
 
-function realizarCompra(comprasDaCliente) {
-    let valorTotal = 0 // variável com a soma de todos os valores dos produtos sem desconto
-    let descontoAplicado = 0 // variável com a soma de todos os descontos aplicados
-    let valorFinal = 0 // variável com a soma de todos os valores dos produtos com desconto
-    let quantidadeDeProdutos = comprasDaCliente.length
+let clienteSandra = [
+    {produto: 'Camisa regata cinza', valor: 50.0}, 
+    {produto: 'Short azul reto', valor: 90.0}, 
+    {produto: 'Meia colorida', valor: 30.0}, 
+    {produto: 'Saia branca', valor: 90.0}, 
+    {produto: 'Moleton Roxo', valor: 150.0}]
 
-    for(let item of comprasDaCliente) {
+let clienteMax = [
+    {produto: 'Camiseta box logo', valor: 120.0}, 
+    {produto: 'Boné aba reta', valor: 80.0}, 
+    {produto: 'Sandalia slide branca', valor: 50.0}, 
+    {produto: 'Macacao longo', valor: 200.0}]
+    
+function efetuarCompra(arrayCompras) {
+    let valorTotal = 0 
+    let descontoAplicado = 0 
+    let valorFinal = 0 
+    let quantidadeDeProdutos = arrayCompras.length
+
+    for(let item of arrayCompras) {
         valorTotal += item.valor
         if (item.valor >= 200.0) {
             descontoAplicado += (item.valor * 0.5)
@@ -37,7 +50,7 @@ function realizarCompra(comprasDaCliente) {
     }
 
     let dataDaCompra = new Date()
-    console.log(dataDaCompra)
+    //console.log(dataDaCompra)
 
     let notaFiscal = {
         "Valor Total": `R$${valorTotal.toFixed(2).replace('.', ',')}`,
@@ -60,4 +73,6 @@ function realizarCompra(comprasDaCliente) {
     }
 }
 
-realizarCompra(clienteLilit)
+efetuarCompra(clienteLilit)
+efetuarCompra(clienteSandra)
+efetuarCompra(clienteMax)
