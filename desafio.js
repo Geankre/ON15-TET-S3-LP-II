@@ -22,7 +22,9 @@ let clienteMax = [
     {produto: 'Camiseta box logo', valor: 120.0}, 
     {produto: 'Boné aba reta', valor: 80.0}, 
     {produto: 'Sandalia slide branca', valor: 50.0}, 
-    {produto: 'Macacao longo', valor: 200.0}]
+    {produto: 'Macacao longo', valor: 200.0},
+    {produto: 'Camiseta Oversized Hell', valor: 200.0},
+    {produto: 'Moletom Tag', valor: 240.0}]
     
 function efetuarCompra(arrayCompras) {
     let valorTotal = 0 
@@ -66,7 +68,7 @@ function efetuarCompra(arrayCompras) {
     if(quantidadeDeProdutos > 10 || valorFinal > 800.0) {
         return console.table({
             ...notaFiscal,
-            "Bônus": 'Você ganhou um cupom de R$50,00 para a sua prõxima compra'
+            "Cupom": 'Aeww, você ganhou um cupom de R$50,00 para a sua próxima compra'
         })
     } else {
         return console.table(notaFiscal)
